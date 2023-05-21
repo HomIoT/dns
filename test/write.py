@@ -8,6 +8,7 @@ load_dotenv()
 
 # Set the parameters for the Cloudflare API
 dns_record_id = os.getenv("CLOUDFLARE_RECORD")
+dns_record_name = os.getenv("CLOUDFLARE_DND")
 api_token = os.getenv("CLOUDFLARE_TOKEN")
 zone_id = os.getenv("CLOUDFLARE_ZONE")
 
@@ -23,7 +24,7 @@ headers = {
 }
 data = {
     'type': 'A',
-    'name': 'home.amirhossein.info',
+    'name': dns_record_name,
     'content': public_ip
 }
 
